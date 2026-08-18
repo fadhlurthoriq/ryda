@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .title-gradient {
+        @apply bg-gradient-to-b from-neutral-700 to-neutral-900 bg-clip-text text-transparent;
+    }
+    .btn-pill {
+        @apply inline-flex gap-2 items-center rounded-full text-sm px-6 py-3.5 leading-none transition duration-200 ease-in-out;
+    }
+    .badge-pill {
+        @apply inline-flex gap-2 items-center rounded-2xl bg-gold-100 text-gold-900 text-sm px-4 py-2 leading-none;
+    }
+}

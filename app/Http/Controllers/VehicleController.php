@@ -42,16 +42,9 @@ class VehicleController extends Controller
     }
 
     // Halaman utama: list semua kendaraan tersedia + search & filter
-    public function index(Request $request) {
-        if (! Auth::check()) {
-            return redirect()->route('login');
-        }
-
-        if (Auth::user()->isPenjual()) {
-            return redirect()->route('seller.dashboard');
-        }
-
-        return redirect()->route('dashboard');
+    public function index()
+    {
+        return view('vehicles.index');
     }
 
     // Detail 1 kendaraan (pakai slug, sesuai getRouteKeyName)

@@ -22,7 +22,8 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse{
+    public function store(LoginRequest $request): RedirectResponse
+    {
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -31,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('seller.dashboard');
         }
 
-        return redirect()->route('dashboard');
+        return redirect()->route('vehicles.index');
     }
 
     /**
@@ -45,6 +46,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('vehicles.index');
     }
 }

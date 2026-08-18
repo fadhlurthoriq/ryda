@@ -60,7 +60,7 @@
         const chatBox = document.getElementById('chat-messages');
         chatBox.scrollTop = chatBox.scrollHeight;
 
-        const userIds = [{{ auAuth::id() }}, {{ $otherUser->id }}].sort((a, b) => a - b);
+        const userIds = [{{ Auth::id() }}, {{ $otherUser->id }}].sort((a, b) => a - b);
         const channelName = `chat.{{ $vehicle->id }}.${userIds.join('-')}`;
 
         window.Echo.private(channelName)
